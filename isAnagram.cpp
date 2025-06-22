@@ -1,20 +1,24 @@
 #include "headers.h"
 
+bool is_Anagram(string &word1,string &word2){
+    int count_Of_Characters[26] = {0};
+    for(int i=0; i<word1.length(); ++i){
+        count_Of_Characters[word1[i] - 'a']++;
+    }
+    for(int i=0; i<word2.length(); ++i){
+        count_Of_Characters[word2[i] - 'a']--;
+    }
+
+    for(auto &i : count_Of_Characters){
+        if(i) return false;
+    }
+    return true;
+}
+
 int main(){
-    int arr[26]={0};
-
-    string s1="educes",s2="seduce";
-
-    for(int i=0; i<s1.length(); ++i){
-        arr[s1[i]-'a']++;
-    }
-    for(int i=0; i<s2.length(); ++i){
-        arr[s2[i]-'a']--;
-    }
-    bool flag=false;
-    for(int i=0; i<26; ++i){
-        if(arr[i]!=0) flag=true;
-    }
-    if(flag) cout<<"Not an Anagram"<<endl;
-    else cout<<"Anagram"<<endl;
+    string word1 = "seduce", word2 = "educes";
+    bool anagram = is_Anagram(word1,word2);
+    
+    if(!anagram) cout<<word1<<" and "<<word2<<" are not an Anagram"<<"\n";
+    else cout<<word1<<" and "<<word2<<" are Anagram"<<"\n";
 }

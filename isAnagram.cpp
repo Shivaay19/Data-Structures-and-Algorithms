@@ -22,3 +22,4 @@ int main(){
     if(!anagram) cout<<word1<<" and "<<word2<<" are not an Anagram"<<"\n";
     else cout<<word1<<" and "<<word2<<" are Anagram"<<"\n";
 }
+

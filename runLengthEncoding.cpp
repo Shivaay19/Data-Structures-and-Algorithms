@@ -14,6 +14,6 @@ void encode(string &word){
 }
 
 int main(){
-    string word = "a";
+    string word = "aaaakkkrrrttzwwwwasssskk";
     encode(word);
 }
